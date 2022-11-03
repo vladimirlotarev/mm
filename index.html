@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body style="margin: 0;background-color: black;font-family: Arial, sans-serif;">
+    <form class="brand">
+        <fieldset class="brand__list">
+            <legend class="brand__ttl">Выберите бренд:</legend>
+            <p class="brand__item">
+                <input class="brand__inpt brand__inpt_checked" type="radio" name="brand"  value="nedzen" id="sarabanda" checked>
+                <span class="brand__inpt-mask"></span>
+                <label class="brand__lbl" for="sarabanda">Sarabanda</label>
+            </p>
+            <p class="brand__item">
+                <input class="brand__inpt" type="radio" name="brand" id="minibanda">
+                <span class="brand__inpt-mask"></span>
+                <label class="brand__lbl" for="minibanda">Minibanda</label>
+            </p>
+            <p class="brand__item">
+                <input class="brand__inpt" type="radio" name="brand" id="ido">
+                <span class="brand__inpt-mask"></span>
+                <label class="brand__lbl" for="ido">iDO</label>
+            </p>
+            <p class="brand__item">
+                <input class="brand__inpt" type="radio" name="brand" id="superga">
+                <span class="brand__inpt-mask"></span>
+                <label class="brand__lbl" for="superga">Superga</label>
+            </p>
+        </fieldset>
+    </form>
+    <div class="callback">
+        <button class="callback__btn" onclick="openPopup()">Заказать консультацию</button>
+        <div class="callback__popup">  
+            <div class="callback__inner"> 
+                <h3 class="callback__ttl">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</h3>
+            </div>
+        </div>   
+    </div>
+    <div class="tab">
+        <div class="tab__head">
+            <button class="tab__btn" data-id="cheap" >САМЫЙ ДЕШЕВЫЙ</button>
+            <button class="tab__btn tab__btn_cur" data-id="fast" disabled>САМЫЙ БЫСТРЫЙ</button>
+        </div>
+        <div class="tab__body">
+            <ul class="tab__list" id="cheap">
+                <li  class="tab__item tbl">
+                    <div class="tbl__head">
+                        <div class="tbl__price">13 400<span class="tbl__cur">P</span></div>
+                        <!-- В зависимости под что верска и от изображения, возможно использование picture, figure, svg, webp и пр. 
+                        При необходимости возможно реализовать lazy loading, но скорее это будет готовое решение -->  
+                        <img class="tbl__logo" src="/any_img.webp" alt="any title"> 
+                        <div class="tbl__name">Airlines</div>
+                    </div>
+                    <div class="tbl__body">
+                        <div class="tbl__row">
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">MOW - HKT</span>
+                                <span class="tbl__txt">10:45 - 08:00</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">В ПУТИ</span>
+                                <span class="tbl__txt">21ч 15м</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">2 ПЕРЕСАДКИ</span>
+                                <span class="tbl__txt">HKG, JNB</span>
+                            </div>
+                        </div>
+                        <div class="tbl__row">
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">MOW - HKT</span>
+                                <span class="tbl__txt">11:20 - 00:50</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">В ПУТИ</span>
+                                <span class="tbl__txt">13ч 30м</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">2 ПЕРЕСАДКИ</span>
+                                <span class="tbl__txt">HKG</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="tab__item">
+                    <div class="tbl__head">
+                        <div class="tbl__price">13 400<span class="tbl__cur">P</span></div>
+                        <img class="tbl__logo" src="/any_img.webp" alt="any title"> 
+                        <div class="tbl__name">Airlines</div>
+                    </div>
+                    <div class="tbl__body">
+                        <div class="tbl__row">
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">MOW - HKT</span>
+                                <span class="tbl__txt">10:45 - 08:00</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">В ПУТИ</span>
+                                <span class="tbl__txt">21ч 15м</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">2 ПЕРЕСАДКИ</span>
+                                <span class="tbl__txt">HKG, JNB</span>
+                            </div>
+                        </div>
+                        <div class="tbl__row">
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">MOW - HKT</span>
+                                <span class="tbl__txt">11:20 - 00:50</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">В ПУТИ</span>
+                                <span class="tbl__txt">13ч 30м</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">2 ПЕРЕСАДКИ</span>
+                                <span class="tbl__txt">HKG</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="tab__list tab__list_show" id="fast">
+                <li  class="tab__item tbl">
+                    <div class="tbl__head">
+                        <div class="tbl__price">13 400<span class="tbl__cur">P</span></div> 
+                        <img class="tbl__logo" src="/any_img.webp" alt="any title"> 
+                        <div class="tbl__name">Airlines</div>
+                    </div>
+                    <div class="tbl__body">
+                        <div class="tbl__row">
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">MOW - HKT</span>
+                                <span class="tbl__txt">10:45 - 08:00</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">В ПУТИ</span>
+                                <span class="tbl__txt">21ч 15м</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">2 ПЕРЕСАДКИ</span>
+                                <span class="tbl__txt">HKG, JNB</span>
+                            </div>
+                        </div>
+                        <div class="tbl__row">
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">MOW - HKT</span>
+                                <span class="tbl__txt">11:20 - 00:50</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">В ПУТИ</span>
+                                <span class="tbl__txt">13ч 30м</span>
+                            </div>
+                            <div class="tbl__col">
+                                <span class="tbl__ttl">2 ПЕРЕСАДКИ</span>
+                                <span class="tbl__txt">HKG</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bnr">
+        <div class="bnr__btn-add-story btn-add-story">
+            <div class="btn-add-story__txt">
+                <span class="btn-add-story__ltr">В</span>
+                <span class="btn-add-story__ltr">а</span>
+                <span class="btn-add-story__ltr">ш</span>
+                <span class="btn-add-story__ltr">а</span> 
+                <span class="btn-add-story__ltr"> </span>
+                <span class="btn-add-story__ltr">и</span>
+                <span class="btn-add-story__ltr">с</span>
+                <span class="btn-add-story__ltr">т</span>
+                <span class="btn-add-story__ltr">о</span>
+                <span class="btn-add-story__ltr">р</span>
+                <span class="btn-add-story__ltr">и</span>
+                <span class="btn-add-story__ltr">я</span>
+            </div>
+            <svg class="btn-add-story__icon" width="77" height="89" viewBox="0 0 77 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.25" d="M0.876064 46.0001C0.649547 28.3198 8.16364 15.1096 23.8761 7.00013C37.4102 0.0149145 50.3537 -1.66919 62.8761 7.00013C76.0758 16.1384 76.5734 29.961 75.8761 46.0001C75.2586 60.202 73.9707 71.1128 62.8761 80.0001C49.1604 90.987 32.3249 90.0032 17.8761 80.0001C5.67057 71.5502 1.06624 60.844 0.876064 46.0001Z" stroke="black"/>
+            </svg>
+            <span class="btn-add-story__plus">+</span>
+        </div>
+        <div class="bnr__ttl">
+            Первые заявки из контекстной рекламы уже через 7 дней!
+        </div>
+        <div class="bnr__subttl">
+            Повышаем продажи, а не просто настраиваем контекстную рекламу
+        </div>
+        <button class="bnr__btn">Оставить заявку</button>
+        <div class="bnr__act">
+            Получи подарок<br>
+            — часовая консультация маркетолога
+            <span class="bnr__lbl">Оставьте заявку</span>
+        </div>
+    </div>
+
+    <script async>
+        function openPopup() {
+            document.querySelector('.callback__popup').classList.toggle('callback__popup_open');
+        } // Для сокращения DOM, и для исключения пустых элементов, я обычно, реализую popup путем создания элементов средствами js, при клике,
+        // и добавления контента из data или через fetch. 
+        // В фреймворках я использую условия для вывода. При возможности или необходимости использую готовые решения из различных библиотек.
+
+        function toggleTabs() {
+            document.querySelector('.tab__head').addEventListener('click', e => {
+                let tab = e.target.closest('.tab__btn');
+
+                if(!tab) return;
+                let cur = document.querySelector('.tab__btn_cur');
+                cur.classList.toggle('tab__btn_cur');
+                cur.disabled = false;
+                tab.classList.toggle('tab__btn_cur');
+                tab.disabled = true;
+
+                // Здесь я пологаю разметка меняться не будет, а будут менятся значения переменных поэтому это код исключительно для демостранции.
+                let id = tab.getAttribute('data-id');
+                document.querySelector('.tab__list_show').classList.toggle('tab__list_show');
+                document.querySelector(`#${id}`).classList.toggle('tab__list_show');
+            });
+        }
+        toggleTabs(); // Скорее всего табы будут переключаться путем смены занчения флагов атрибутов, или с использованием библиотек,
+        // в качестве демострации реализовал через делегирование. 
+    </script>
+</body>
+</html>
+
+<!-- P.S. Возможно было воспользоваться какой-нибудь из библиотек или препроцессоров,
+    а так же формировать верстку и логику под один из фреймворков,
+    но так как не было указанно, реализовал по классике. -->
